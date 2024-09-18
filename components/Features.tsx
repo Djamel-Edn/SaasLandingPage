@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import React from 'react'
-import ecosystemIcon from '@/assets/icons/ecosystem.svg'
 import Feature from './Feature'
 const features= [
     {

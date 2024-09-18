@@ -14,7 +14,7 @@ const AppImage = () => {
 
   useEffect(() => {
     scrollYProgress.on('change', (latestValue) => console.log("latestValue", latestValue));
-  }, []);
+  }, [scrollYProgress]);
 
   const rotateX = useTransform(scrollYProgress, [0, 1], [25, 0]);
   const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);

@@ -12,7 +12,7 @@ const CallToAction = () => {
   })
   useEffect(()=>{
 
-  },[])
+  },[scrollYProgress])
   const translateY=useTransform(scrollYProgress,[0,1],[120,-70])
   return (
     <div className="bg-black text-white py-[72px] sm:py-24 text-center" ref={containerRef}>

@@ -4,7 +4,6 @@ import ArrowIcon from '@/assets/icons/arrow-w.svg'
 import Image from 'next/image'
 import messageIcon from '@/assets/images/message.png';
 import cursorIcon from '@/assets/images/cursor.png';
-import { motion } from 'framer-motion'
 import { MotionDiv } from './MotionDiv';
 const Hero = () => {
     return (
