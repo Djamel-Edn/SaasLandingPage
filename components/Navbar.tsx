@@ -21,7 +21,7 @@ const Navbar = () => {
           
 
           <motion.div
-           
+           initial={{ x: 0 }}
             animate={{ x: showMenu ? 0 : 50 }}
             transition={{ duration: 0.3 }} 
             className={`${showMenu ? 'block' : 'hidden'} sm:flex`}
