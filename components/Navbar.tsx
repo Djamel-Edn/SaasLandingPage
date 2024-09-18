@@ -18,24 +18,46 @@ const Navbar = () => {
             <Image src={logoImage} alt='Saas logo' className='h-12 w-12 relative' />
           </div>
 
+      
           
 
+          {/* Mobile Menu Animation */}
           <motion.div
-           initial={{ x: 0 }}
-            animate={{ x: showMenu ? 50 : 0 }}
-            transition={{ duration: 0.3 }} 
-            className={`${showMenu ? 'block' : 'hidden'} sm:flex`}
+            initial={{ x: 200, opacity: 0.4 }}
+            animate={{ x: showMenu ? 0 : 200, opacity: showMenu ? 1 : 0.4 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className={`${showMenu ? 'block' : 'hidden'} sm:hidden`} 
           >
-            <nav className='gap-2 sm:gap-6 items-center flex text-sm sm:text-lg'>
+            <nav className='gap-2 sm:gap-6 items-center flex text-sm sm:text-lg ml-2'>
               <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>About</Link>
               <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>Features</Link>
               <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>Updates</Link>
               <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>Help</Link>
               <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>Customers</Link>
-              <button className='bg-white py-2 px-4 rounded-lg hidden sm:inline'>Get for free</button>
+              
             </nav>
           </motion.div>
-          <div className='border border-white border-opacity-30 h-10 w-10 inline-flex justify-center items-center rounded-lg sm:hidden' onClick={() => setShowMenu(prev => !prev)}>
+
+          {/* Desktop Menu */}
+          <motion.div
+            initial={{ x: 200, opacity: 0.4 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            
+          >
+          <nav className='hidden sm:flex gap-6 items-center'>
+            <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>About</Link>
+            <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>Features</Link>
+            <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>Updates</Link>
+            <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>Help</Link>
+            <Link href='#' className='text-white text-opacity-60 hover:text-opacity-100 transition'>Customers</Link>
+            <button className='bg-white py-2 px-4 rounded-lg'>Get for free</button>
+          </nav>
+          </motion.div>
+          <div 
+            className='border border-white border-opacity-30 h-10 w-10 inline-flex justify-center items-center rounded-lg sm:hidden' 
+            onClick={() => setShowMenu(prev => !prev)}
+          >
             <Image src={menuIcon} alt='Menu icon' className='h-6 w-6 cursor-pointer' />
           </div>
         </div>
